@@ -1,19 +1,19 @@
 @extends('layouts.app')
 
 @section('content')
-<!-- Memasukkan CSS khusus untuk halaman profil ini saja -->
+
 <style>
     /* Card */
     .profile-card {
     width: 350px;
     padding: 30px;
     border-radius: 25px;
-    /* Menggunakan Pink yang lebih gelap dan tegas */
+
     background: #EC407A; 
     box-shadow: 0 15px 35px rgba(236, 64, 122, 0.3);
     text-align: center;
     transition: 0.3s;
-    color: #FFFFFF; /* Font putih agar sangat jelas */
+    color: #FFFFFF; 
 }
 
 .profile-card h1 {
@@ -23,14 +23,14 @@
 }
 
 .role {
-    color: #E3F2FD; /* Biru muda agar jelas di atas pink gelap */
+    color: #E3F2FD; 
     font-weight: 600;
     font-size: 15px;
 }
 
 .desc {
     font-size: 14px;
-    color: #FCE4EC; /* Pink sangat muda agar tetap nyaman dibaca */
+    color: #FCE4EC; 
     margin-bottom: 20px;
 }
 
@@ -40,7 +40,7 @@
 }
 
 .social a {
-    color: #E3F2FD; /* Link warna biru muda agar kontras */
+    color: #E3F2FD; 
     font-weight: bold;
 }
 
@@ -108,13 +108,13 @@
 
     /* Button Custom (Updated for WhatsApp Link) */
     .btn-custom {
-        display: inline-block; /* Penting agar link berbentuk tombol */
+        display: inline-block; 
         padding: 10px 25px;
         border-radius: 25px;
         border: none;
         background: linear-gradient(135deg, #38bdf8, #6366f1);
-        color: white !important; /* Memastikan teks tetap putih */
-        text-decoration: none; /* Menghilangkan garis bawah khas link */
+        color: white !important; 
+        text-decoration: none; 
         cursor: pointer;
         transition: 0.3s;
         font-size: 14px;
@@ -124,7 +124,7 @@
     .btn-custom:hover {
         opacity: 0.9;
         color: white !important;
-        transform: scale(1.05); /* Sedikit efek membesar saat disentuh */
+        transform: scale(1.05); 
     }
 
     /* Efek interaktif untuk link Email */
@@ -132,19 +132,19 @@
         color: #FFFFFF;
         text-decoration: none;
         transition: all 0.2s ease-in-out;
-        display: inline-block; /* Dibutuhkan agar efek scale berfungsi */
+        display: inline-block; 
     }
 
     /* Saat kursor diarahkan ke email (Hover) */
     .email-link:hover {
-        color: #38bdf8; /* Berubah jadi biru muda */
-        transform: translateY(-2px); /* Sedikit melayang ke atas */
+        color: #38bdf8; 
+        transform: translateY(-2px); 
     }
 
     /* Saat email diklik (Active/Ditekan) */
     .email-link:active {
-        color: #FCE4EC; /* Berubah jadi pink pucat sesaat */
-        transform: scale(0.90); /* Mengecil seperti tombol ditekan */
+        color: #FCE4EC; 
+        transform: scale(0.90); 
     }
 
     

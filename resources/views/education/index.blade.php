@@ -9,13 +9,13 @@
            CSS NAVBAR (Navigasi Biru Atas)
            ========================================================================== */
         .navbar {
-            background-color: #8ed1fc; /* Warna biru cerah sesuai gambar */
+            background-color: #8ed1fc; 
             padding: 16px 50px;
             display: flex;
             justify-content: space-between;
             align-items: center;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-            position: sticky; /* Membuat navbar tetap di atas saat di-scroll */
+            position: sticky; 
             top: 0;
             z-index: 1000;
         }
@@ -29,8 +29,7 @@
 
         .navbar-menu {
             display: flex;
-            gap: 30px; /* Jarak antar link */
-        }
+            gap: 30px;         }
 
         .navbar-menu a {
             color: #ffffff;
@@ -41,7 +40,7 @@
         }
 
         .navbar-menu a:hover {
-            opacity: 0.7; /* Efek transparan saat di-hover */
+            opacity: 0.7; 
         }
 
         /* ==========================================================================
@@ -253,17 +252,17 @@
            CSS FOOTER COPYRIGHT
            ========================================================================== */
         .footer-copyright {
-            width: 100%;                 /* Memastikan lebar penuh */
+            width: 100%;                
             display: flex;
-            justify-content: center;     /* Memaksa teks pas di tengah horizontal */
-            align-items: center;         /* Menjaga teks pas di tengah vertikal */
+            justify-content: center;    
+            align-items: center;        
             padding: 25px 20px;
             color: #4a5568; 
             font-size: 0.95em;
             border-top: 1px solid rgba(216, 27, 96, 0.15); 
             background-color: transparent;
-            box-sizing: border-box;      /* Mencegah padding merusak ukuran lebar */
-            margin-top: auto;            /* Mendorong footer mentok ke bawah */
+            box-sizing: border-box;     
+            margin-top: auto;           
         }
         
     </style>
