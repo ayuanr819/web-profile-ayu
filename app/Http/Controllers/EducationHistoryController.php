@@ -7,14 +7,14 @@ use Illuminate\Http\Request;
 
 class EducationHistoryController extends Controller
 {
-    // 1. READ: Menampilkan semua data dari database
+    // 1. READ: Menampilkan semua data dari database (Urutan Terbaru di Atas)
     public function index()
     {
-        // Mengambil semua data menggunakan Eloquent Model
-        // Metode ::all() akan mengambil seluruh baris pada tabel education_histories
-        $educations = EducationHistory::all();
+        // Mengambil data menggunakan Eloquent Model dan diurutkan berdasarkan start_year secara descending
+        // Ini akan membuat Politeknik Indonusa Surakarta (2024) di atas dan SMA N 3 SUKOHARJO (2021) di bawah
+        $educations = EducationHistory::orderBy('start_year', 'desc')->get();
 
-        return view('education', [
+        return view('education.index', [
             'educations' => $educations
         ]);
     }
@@ -40,29 +40,25 @@ class EducationHistoryController extends Controller
         ]); 
  
         // 2. Menyimpan data ke database menggunakan Eloquent ORM (Mass Assignment) 
-        // Fungsi create() secara otomatis akan mencocokkan input form dengan properti $fillable pada Model 
         EducationHistory::create($request->all()); 
  
         // 3. Mengarahkan kembali ke halaman index dengan pesan sukses 
         return redirect()->route('education.index') 
                          ->with('success', 'Data riwayat pendidikan berhasil ditambahkan!'); 
     }
-    /** 
-     * 4. EDIT: Mengambil satu baris data berdasarkan ID untuk ditampilkan pada form edit 
+
+    /** * 4. EDIT: Mengambil satu baris data berdasarkan ID untuk ditampilkan pada form edit 
      */ 
     public function edit($id) 
     { 
         // Eloquent 'findOrFail' akan mencari data berdasarkan ID. 
-        // Jika ID tidak ditemukan di database, akan otomatis memunculkan halaman 404 (Not Found). 
         $education = EducationHistory::findOrFail($id); 
          
         return view('education.edit', compact('education')); 
     } 
  
-    /** 
-     * 5. UPDATE: Memperbarui data di database berdasarkan inputan dari form 
+    /** * 5. UPDATE: Memperbarui data di database berdasarkan inputan dari form 
      */ 
- 
     public function update(Request $request, $id) 
     { 
         // 1. Validasi input data 
@@ -83,8 +79,8 @@ class EducationHistoryController extends Controller
         return redirect()->route('education.index') 
                          ->with('success', 'Data riwayat pendidikan berhasil diperbarui!'); 
     }
-    /** 
-     * 6. DESTROY: Menghapus data secara permanen dari database 
+
+    /** * 6. DESTROY: Menghapus data secara permanen dari database 
      */ 
     public function destroy($id) 
     { 
@@ -96,6 +92,6 @@ class EducationHistoryController extends Controller
  
         // 3. Mengarahkan kembali ke halaman index dengan pesan sukses 
         return redirect()->route('education.index') 
-                         ->with('success', 'Data riwayat pendidikan berhasil dihapus!'); 
-    }
+                         ->with('with', 'Data riwayat pendidikan berhasil dihapus!'); 
+    }   
 }
